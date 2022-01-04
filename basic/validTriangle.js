@@ -4,10 +4,13 @@
 // Ex2) INPUT: A = 13, B= 33, C = 17, OUTPUT: "NO"
 
 const validTriangle = (a, b, c) => {
-  let max = a > b ? (a > c ? a : c) : b > c ? b : c; // Find max length of give 3 integer
+  // old solution
+  //let max = a > b ? (a > c ? a : c) : b > c ? b : c; // Find max length of give 3 integer
   // If max value is less than the sum of other 2 values, triangle can be constructed with the given lines
-  let output = max < a + b + c - max ? 'YES' : 'NO';
-  return output;
+  //let output = max < a + b + c - max ? 'YES' : 'NO';
+  // return output;
+  // new solution
+  return Math.max(a, b, c) < a + b + c - Math.max(a, b, c) ? 'YES' : 'NO';
 };
 
 console.log(validTriangle(6, 7, 11));
