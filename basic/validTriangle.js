@@ -4,7 +4,7 @@
 // Ex2) INPUT: A = 13, B= 33, C = 17, OUTPUT: "NO"
 
 const validTriangle = (a, b, c) => {
-  let max = a > b ? (a > c ? a : c > b ? c : b) : b > c ? b : c; // Find max length of give 3 integer
+  let max = a > b ? (a > c ? a : c) : b > c ? b : c; // Find max length of give 3 integer
   // If max value is less than the sum of other 2 values, triangle can be constructed with the given lines
   let output = max < a + b + c - max ? 'YES' : 'NO';
   return output;
