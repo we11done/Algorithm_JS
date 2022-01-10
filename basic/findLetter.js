@@ -3,10 +3,13 @@
 //     OUPUT: 3
 
 const solution = (stringLine, letter) => {
-  let count = 0;
-  for (let char of stringLine) {
-    char === letter && count++;
-  }
+  // Loop Search
+  // let count = 0;
+  // for (let char of stringLine) {
+  //   char === letter && count++;
+  // }
+  // Built-in function
+  let count = stringLine.split(letter).length - 1;
   return count;
 };
 
