@@ -9,16 +9,14 @@ const solution = string => {
   let count = 1;
   let prev = string.charAt(0);
   let output = '';
-  for (let i = 1; i < string.length; i++) {
-    if (string.charAt(i) === prev) {
+  let input = string + ' ';
+  for (let i = 1; i < input.length; i++) {
+    if (input.charAt(i) === prev) {
       count++;
     } else {
       count === 0 ? (output += prev) : (output += prev + count);
-      prev = string.charAt(i);
+      prev = input.charAt(i);
       count = 0;
-    }
-    if (i === string.length - 1) {
-      count === 0 ? (output += prev) : (output += prev + count);
     }
   }
   return output;
