@@ -13,8 +13,7 @@ const solution = (str, char) => {
   distance = Number.MAX_VALUE;
   for (let i = str.length - 1; i >= 0; i--) {
     str.charAt(i) !== char ? distance++ : (distance = 0);
-    distanceArray[i] =
-      distanceArray[i] > distance ? distance : distanceArray[i];
+    distanceArray[i] > distance && (distanceArray[i] = distance);
   }
   return distanceArray;
 };
