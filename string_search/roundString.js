@@ -13,6 +13,7 @@ const solution = string => {
   //   secondHalf += string.charAt(string.length - 1 - i);
   // }
   // return firstHalf === secondHalf;
+  // Solved with split & join
   return string === string.split('').reverse().join('');
 };
 
