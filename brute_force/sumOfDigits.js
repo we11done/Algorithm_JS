@@ -11,7 +11,7 @@ const solution = array => {
     let current = array[i]
       .toString()
       .split('')
-      .reduce((acc, current) => Number(acc) + Number(current), 0);
+      .reduce((acc, current) => acc + Number(current), 0);
     if (current > max) {
       maxArr = [];
       max = current;
