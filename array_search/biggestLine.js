@@ -8,7 +8,7 @@
 //             [19, 13, 30, 13, 19]]
 //      OUPUT: 155
 
-const solution = array2D => {
+const solution = matrix => {
   let sumOfLine = [];
   let diagonalSumL = 0;
   let diagonalSumR = 0;
