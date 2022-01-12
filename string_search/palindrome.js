@@ -9,8 +9,8 @@ const solution = string => {
   // let firstHalf = '';
   // let secondHalf = '';
   // for (let i = 0; i < half; i++) {
-  //   firstHalf += string.charAt(i);
-  //   secondHalf += string.charAt(string.length - 1 - i);
+  //   firstHalf += string.toUpperCase().charAt(i);
+  //   secondHalf += string.toUpperCase().charAt(string.length - 1 - i);
   // }
   // return firstHalf === secondHalf;
   // Solved with split & join
