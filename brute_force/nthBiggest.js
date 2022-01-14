@@ -7,13 +7,10 @@
 
 const solution = (cards, n) => {
   let sumResult = [];
-  for (let i = 0; i < cards.length; i++) {
-    let sum = 0;
-    let otherCards = cards.filter((ele, index) => index !== i);
-    for (let j = 0; j < otherCards.length; j++) {
-      let anotherCards = otherCards.filter((ele, index) => index !== j);
-      for (let k = 0; k < anotherCards.length; k++) {
-        sum = cards[i] + otherCards[j] + anotherCards[k];
+  for (let i = 0; i < cards.length - 2; i++) {
+    for (let j = i + 1; j < cards.length - 1; j++) {
+      for (let k = j + 1; k < cards.length; k++) {
+        let sum = cards[i] + cards[j] + cards[k];
         sumResult.push(sum);
       }
     }
