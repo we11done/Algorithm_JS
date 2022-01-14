@@ -19,7 +19,10 @@ const solution = (budget, giftCost) => {
         (acc, current) => (acc += current[0] + current[1]),
         0
       );
-      if (discountedItemCost + otherCost === 28 && maxQuantity < itemCount) {
+      if (
+        discountedItemCost + otherCost === budget &&
+        maxQuantity < itemCount
+      ) {
         maxQuantity = itemCount;
       } else {
         otherItems = otherItems.filter((ele, index) => index !== 0);
