@@ -29,11 +29,11 @@ const solution = matrix => {
           }
         }
         flag && pairCount++;
-        //flag && result.push([i, j]);
+        flag && result.push([i, j]);
       }
     }
   }
-  //console.log(result);
+  console.log(result); // To match the OUPUT;
   return pairCount;
 };
 
