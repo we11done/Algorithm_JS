@@ -8,9 +8,10 @@
 // From the top, 1st, 2nd...It is expressed in the order of Nth place.
 // If N = 4 per line and the test results are entered as [3 ,4 ,1 ,2],
 // it means that student 3 is first, student 4 is second, student 1 is third, and student 2 is fourth.
-// Ex) INPUT: [[3 ,4 ,1 ,2],
-//             [4 ,3 ,2 ,1],
-//             [3 ,1 ,4 ,2]]
+//             1st 2nd 3rd 4th
+// Ex) INPUT: [[3  ,4  ,1  ,2],
+//             [4  ,3  ,2  ,1],
+//             [3  ,1  ,4  ,2]]
 //     OUTPUT: 3 ([3,1],[3,2],[4,2])
 
 const solution = matrix => {
