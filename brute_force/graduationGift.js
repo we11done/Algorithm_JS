@@ -9,25 +9,24 @@
 //     => [2,2] [4,3] [4,5] and 50% discount on [10,3] = [5,3] => 4+7+9+8 = 28
 
 const solution = (budget, giftCost) => {
-  let maxQuantity = Number.MIN_SAFE_INTEGER;
+  giftCost.sort((a, b) => a[0] + a[1] - (b[0] + b[1]));
+  let max = 0;
   for (let i = 0; i < giftCost.length; i++) {
-    let discountedItemCost = giftCost[i][0] / 2 + giftCost[i][1];
-    let itemCount = 5;
+    let currentWithDiscount = giftCost[i][0] / 2 + giftCost[i][1];
+    let leftOver = budget - currentWithDiscount;
     let otherItems = giftCost.filter(ele => ele !== giftCost[i]);
-    for (let j = 0; j < giftCost.length - 1; j++) {
-      let otherCost = otherItems.reduce(
-        (acc, current) => (acc += current[0] + current[1]),
-        0
-      );
-      if (discountedItemCost + otherCost <= budget && maxQuantity < itemCount) {
-        maxQuantity = itemCount;
-      } else {
-        otherItems = otherItems.filter((ele, index) => index !== 0);
-        itemCount--;
+    let itemCount = 1;
+    for (let j = 0; j < otherItems.length; j++) {
+      let itemCost = otherItems[j][0] + otherItems[j][1];
+      if (leftOver < itemCost) break;
+      if (leftOver >= itemCost) {
+        itemCount++;
+        leftOver -= itemCost;
       }
     }
+    max = Math.max(max, itemCount);
   }
-  return maxQuantity;
+  return max;
 };
 
 console.log(
