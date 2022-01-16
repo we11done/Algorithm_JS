@@ -7,7 +7,7 @@
 
 const solution = (records, k) => {
   let maxSales = Number.MIN_SAFE_INTEGER;
-  for (let i = 0; i < records.length; i++) {
+  for (let i = 0; i < records.length - 2; i++) {
     let sum = 0;
     for (let j = i; j < i + k; j++) {
       sum += records[j];
