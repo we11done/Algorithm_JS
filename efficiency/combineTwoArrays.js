@@ -4,11 +4,15 @@
 //     OUTPUT: [1 ,2 ,3 ,3 ,5 ,6 ,7 ,9]
 
 // Using built-in spread operator & sort
+// Time complexity: O((N + M) * log(N + M))
+// Spread operator time complexity: O(N)
+// Sort operator time complexity: O(N log N)
 const solution = (firstA, secondA) => {
   return [...firstA, ...secondA].sort((a, b) => a - b);
 };
 
 // Using two pointers algorithm
+// Time complexity: O(N + M)
 const solution2 = (firstA, secondA) => {
   let answer = [];
   let n = firstA.length;
