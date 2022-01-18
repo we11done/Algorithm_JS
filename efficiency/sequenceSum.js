@@ -11,11 +11,10 @@ const solution = (array, m) => {
   for (let i = 0; i < array.length; i++) {
     let sum = array[i];
     for (let j = i + 1; j < array.length; j++) {
-      sum += array[j];
       if (sum === m) {
         counts++;
-        break;
       }
+      sum += array[j];
     }
   }
   return counts;
@@ -25,13 +24,13 @@ const solution = (array, m) => {
 const solution2 = (array, m) => {
   let counts = 0;
   let leftIndex = 0;
-  let rightIndex = 1;
-  let sum = array[0];
+  let rightIndex = 0;
+  let sum = 0;
   for (; rightIndex < array.length; ) {
+    if (sum === m) counts++;
     if (sum < m) {
       sum += array[rightIndex++];
     } else {
-      if (sum === m) counts++;
       sum -= array[leftIndex++];
     }
   }
