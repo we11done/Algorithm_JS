@@ -21,5 +21,5 @@ const solution = string => {
 
 let t = performance.now();
 let a1 = solution('(()(()))(()');
-console.log('Solution 1 took ', performance.now() - t, ' seconds');
-console.log('Solution 1 answer:', a1);
+console.log('Solution took ', performance.now() - t, ' seconds');
+console.log('Solution answer:', a1);
