@@ -17,19 +17,17 @@ const solution = (string1, string2) => {
 
 // solved with hashMap
 const solution2 = (string1, string2) => {
-  let sHashMap1 = new Map();
-  let sHashMap2 = new Map();
+  let sHashMap = new Map();
   if (string1.length !== string2.length) return false;
   for (let i = 0; i < string1.length; i++) {
-    sHashMap1.has(string1.charAt(i))
-      ? sHashMap1.set(string1.charAt(i), sHashMap1.get(string1.charAt(i)) + 1)
-      : sHashMap1.set(string1.charAt(i), 1);
-    sHashMap2.has(string2.charAt(i))
-      ? sHashMap2.set(string2.charAt(i), sHashMap2.get(string2.charAt(i)) + 1)
-      : sHashMap2.set(string2.charAt(i), 1);
+    sHashMap.has(string1.charAt(i))
+      ? sHashMap.set(string1.charAt(i), sHashMap.get(string1.charAt(i)) + 1)
+      : sHashMap.set(string1.charAt(i), 1);
   }
-  for (let [key, value] of sHashMap1) {
-    if (sHashMap1.get(key) !== sHashMap2.get(key)) return false;
+  for (let i = 0; i < string2.length; i++) {
+    if (!sHashMap.has(string2.charAt(i)) || sHashMap.get(string2.charAt(i)))
+      return false;
+    sHashMap.set(string2.charAt(i), sHashMap.get(string2.charAt(i)) - 1);
   }
   return true;
 };
