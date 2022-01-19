@@ -23,9 +23,8 @@ const solution2 = (records, k) => {
   let maxSales = (window = records
     .slice(0, k)
     .reduce((acc, current) => acc + current, 0));
-  let leftIndex = 0;
   for (let i = k; i < records.length; i++) {
-    let currentSales = window + records[i] - records[leftIndex++];
+    let currentSales = window + records[i] - records[i - k];
     if (maxSales < currentSales) maxSales = currentSales;
     window = currentSales;
   }
