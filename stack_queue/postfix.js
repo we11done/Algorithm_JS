@@ -9,7 +9,7 @@ const solution = string => {
   const split = string.split('');
   const numbers = [];
   for (let i = 0; i < split.length; i++) {
-    if (Number(split[i])) {
+    if (!isNaN(split[i])) {
       numbers.push(Number(split[i]));
     } else {
       let firstNum = numbers.pop();
