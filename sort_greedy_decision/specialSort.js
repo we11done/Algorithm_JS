@@ -7,7 +7,7 @@
 
 const solution = array => {
   const answer = [...array];
-  for (let i = 0; i < answer.length; i++) {
+  for (let i = 0; i < answer.length - 1; i++) {
     for (let j = 0; j < answer.length - i - 1; j++) {
       answer[j] > 0 &&
         0 > answer[j + 1] &&
