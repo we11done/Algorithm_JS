@@ -24,13 +24,10 @@ const solution = (cacheSize, tasks) => {
       // cache hit
       cacheMemory.splice(cacheMemory.indexOf(tasks[i]), 1);
       cacheMemory.unshift(tasks[i]);
-    } else if (cacheMemory.length < cacheSize) {
-      // cache miss when memory is not full
-      cacheMemory.unshift(tasks[i]);
     } else {
-      // cache miss when memory is full
-      cacheMemory.pop();
+      // cache miss
       cacheMemory.unshift(tasks[i]);
+      cacheMemory.length > cacheSize && cacheMemory.pop();
     }
   }
   return cacheMemory;
