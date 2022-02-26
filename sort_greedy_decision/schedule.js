@@ -42,9 +42,9 @@ const secondTimeTable = [
 
 let t = performance.now();
 let a1 = solution(firstTimeTable);
-console.log('Solution 1 took ', performance.now() - t, ' seconds');
-console.log('Solution 1 answer:', a1);
+console.log('First TimeTable took ', performance.now() - t, ' seconds');
+console.log('First TimeTable answer:', a1);
 let t2 = performance.now();
 let a2 = solution(secondTimeTable);
-console.log('Solution 2 took ', performance.now() - t2, ' seconds');
-console.log('Solution 2 answer:', a2);
+console.log('Second TimeTable took ', performance.now() - t2, ' seconds');
+console.log('Second TimeTable answer:', a2);
