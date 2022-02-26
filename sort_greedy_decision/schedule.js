@@ -15,9 +15,9 @@ const solution = matrix => {
       end === end2 ? start - start2 : end - end2
     ),
   ];
-  let mostSchedules = 1;
-  let [start, end] = sortedMatrix[0];
-  for (let i = 1; i < sortedMatrix.length; i++) {
+  let mostSchedules = 0,
+    end = 0;
+  for (let i = 0; i < sortedMatrix.length; i++) {
     let [nextStart, nextEnd] = sortedMatrix[i];
     if (end <= nextStart) {
       mostSchedules++;
