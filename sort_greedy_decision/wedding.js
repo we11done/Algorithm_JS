@@ -14,18 +14,21 @@ const solution = matrix => {
   let max = Number.MIN_SAFE_INTEGER;
   let current = 0;
   const timeline = [];
+
   for (let [arrived, leaved] of matrix) {
     timeline.push([arrived, 'A']);
     timeline.push([leaved, 'L']);
   }
+
   timeline.sort((a, b) =>
     a[0] === b[0] ? b[1].charCodeAt() - a[1].charCodeAt() : a[0] - b[0]
   );
-  console.log(timeline);
+
   for (let [time, status] of timeline) {
     status === 'A' ? current++ : current--;
     max = Math.max(max, current);
   }
+
   return max;
 };
 
