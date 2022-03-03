@@ -9,8 +9,10 @@
 
 const solution = numbers => {
   let answer = false;
+  let flag = false;
   const checkers = Array.from({ length: numbers.length }, () => 0);
   const subsetRecursive = position => {
+    if (flag) return;
     if (position > numbers.length - 1) {
       let subsetSum = 0;
       let oppositeSum = 0;
@@ -21,7 +23,7 @@ const solution = numbers => {
       }
       if (subsetSum === oppositeSum) {
         answer = true;
-        return;
+        flag = true;
       }
     } else {
       checkers[position] = 1;
@@ -36,12 +38,14 @@ const solution = numbers => {
 
 const solution2 = numbers => {
   let answer = false;
+  let flag = false;
   const totalSum = numbers.reduce((acc, current) => acc + current, 0);
   const subsetRecursive = (position, sum) => {
     if (position === numbers.length) {
+      if (flag) return;
       if (totalSum - sum === sum) {
         answer = true;
-        return;
+        flag = true;
       }
     } else {
       subsetRecursive(position + 1, sum + numbers[position]);
