@@ -14,6 +14,7 @@ const reduceNumRecursive = (num, targetNum, array) => {
     array.push(num++);
     return reduceNumRecursive(num, targetNum, array);
   }
+  return;
 };
 
 let t = performance.now();
