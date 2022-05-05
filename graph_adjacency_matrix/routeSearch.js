@@ -19,7 +19,7 @@ const solution = (vertex, edges) => {
   const findRoute = (position, loopCount) => {
     if (position > vertex - 1) return;
     if (matrix[position][vertex - 1] === 1) {
-      path.push([...temp, position + 1, 5]);
+      path.push([...temp, position + 1, vertex]);
       count++;
     }
     for (let i = 0; i < matrix.length; i++) {
